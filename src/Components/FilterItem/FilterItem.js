@@ -12,7 +12,7 @@ function FilterItem(props){
                 { filter.countries.map((country) => <li>{country}</li>) }
             </ul>
             <ul className='colors'>
-                { filter.colors.map((color) => <li data-color={color}>{color}</li>) }
+                { filter.colors.map((color) => <li data-color={color} className='color'></li>) }
             </ul>
         </div>
     );
