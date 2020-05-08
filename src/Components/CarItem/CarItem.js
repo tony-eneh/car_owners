@@ -6,7 +6,7 @@ function CarItem(props){
     const car = props.item;
     return(
         <div className='car-item card'>
-            <img src='../car-thumbnail.png' alt='a car' className='card-thumbnail' />
+            <img src='../../car.png' alt='a car' className='card-thumbnail' />
             <div className='card-details'>
                 <h3>{car.last_name} {car.first_name}</h3>
                 <div className='row'>
