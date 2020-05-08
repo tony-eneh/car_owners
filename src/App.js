@@ -1,24 +1,63 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import FiltersList from './Components/FiltersList/FiltersList';
 
 function App() {
+  let filters = [
+    { 
+      id: 1,
+      start_year: 1991,
+      end_year: 2009,
+      gender: "male",
+      countries: [
+      "Brazil",
+      "Ireland",
+      "Egypt",
+      "Poland",
+      "Niger",
+      "Greece",
+      "Peru"
+      ],
+      colors: [
+      "Green",
+      "Violet",
+      "Yellow",
+      "Blue"
+      ]},
+    { 
+      id: 2,
+      start_year: 1990,
+      end_year: 2010,
+      gender: "",
+      countries: [
+      "Russia",
+      "Portugal",
+      "Vietnam",
+      "Croatia",
+      "Uganda",
+      "Iran"
+      ],
+      colors: [
+      "Teal",
+      "Maroon",
+      "Red"
+      ]},
+    {
+      id: 3,
+      start_year: 2001,
+      end_year: 2009,
+      gender: "female",
+      countries: [ ],
+      colors: [
+      "Red",
+      "Aquamarine",
+      "Orange",
+      "Mauv"
+      ]}
+  ];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <FiltersList filters={filters} />
     </div>
   );
 }
