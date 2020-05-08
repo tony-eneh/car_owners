@@ -34,8 +34,8 @@ function CarItem(props){
                 <div className='email'>
                     Email: <span>{car.email}</span>
                 </div>
-                <div className='Bio'>
-                    Bio: <span>{car.bio}</span>
+                <div className='bio truncate'>
+                    Bio: <span className=''>{car.bio}</span>
                 </div>
             </div>
         </div>

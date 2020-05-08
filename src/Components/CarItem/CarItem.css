@@ -1,0 +1,22 @@
+.car-item{
+    display: flex;
+}
+
+.car-item .card-thumbnail{
+    flex: 0 0 30%;
+    border-radius: 1rem;
+    box-shadow: rgba(0,0,0, .3) 0 2px 2px 2px;
+    margin: auto .5rem;
+}
+
+.car-item .card-details{
+    text-align: left;
+    overflow: hidden;
+}
+
+.truncate{
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
