@@ -1,10 +1,4 @@
-.filter-item{
-    margin: 1rem;
-    box-shadow: rgba(0,0,0, .3) 2px 3px 4px 5px;
-    border-radius: 2rem;
-    background-color: white;
-    padding: 2rem;
-}
+.filter-item {}
 
 .filter-item ul{
     list-style: none;
