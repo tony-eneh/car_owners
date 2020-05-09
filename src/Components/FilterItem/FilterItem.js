@@ -1,11 +1,12 @@
 import React from 'react';
+import Link from 'react-dom';
 import './FilterItem.css';
 
 function FilterItem(props){
 
     const filter = props.item;
     return(
-        <div className='filter-item card'>
+            <div className='filter-item card'>
             <h3>{filter.start_year} - {filter.end_year}</h3>
             <h4>{filter.gender}</h4>
             <ul className='countries'>
