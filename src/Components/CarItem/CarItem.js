@@ -1,4 +1,5 @@
 import React from 'react';
+import carImage from '../../car.png';
 import './CarItem.css';
 
 function CarItem(props){
@@ -6,18 +7,20 @@ function CarItem(props){
     const car = props.item;
     return(
         <div className='car-item card'>
-            <img src='../../car.png' alt='a car' className='card-thumbnail' />
+            <div className='card-thumbnail'>
+                <img src={carImage} alt='a car'/>
+            </div>
             <div className='card-details'>
                 <h3>{car.last_name} {car.first_name}</h3>
                 <div className='row'>
-                    <div className='brand'>
+                    <div className='brand demarcated'>
                         Brand<span>{car.car_model}</span>
                     </div>
-                    <div className='year'>
+                    <div className='year demarcated'>
                         Year<span>{car.car_model_year}</span>
                     </div>
                     <div className='Color'>
-                        Color<span>{car.car_color}</span>
+                        Color<span style={{ backgroundColor : car.car_color }} className='color'></span>
                     </div>
                 </div>
                 <div className='row'>
