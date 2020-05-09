@@ -20,7 +20,7 @@ function CarItem(props){
                         Year<span>{car.car_model_year}</span>
                     </div>
                     <div className='Color'>
-                        Color<span>{car.car_color}</span>
+                        Color<span style={{ backgroundColor : car.car_color }} className='color'></span>
                     </div>
                 </div>
                 <div className='row'>

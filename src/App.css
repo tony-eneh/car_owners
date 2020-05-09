@@ -24,3 +24,9 @@ body{
 img{
   max-width: 20rem;
 }
+
+.color{
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+}

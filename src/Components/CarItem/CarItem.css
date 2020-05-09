@@ -62,3 +62,9 @@
 .card-details span{
     color: black;
 }
+
+span.color{
+    /* center the color thumbnail under the text */
+    margin-right: auto;
+    margin-left: auto;
+}
