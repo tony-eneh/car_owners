@@ -13,3 +13,7 @@
     border-radius: 1rem;
     padding: .5rem;
 }
+
+a{
+    text-decoration: none;
+}
