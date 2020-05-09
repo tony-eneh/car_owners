@@ -1,6 +1,9 @@
 import React from 'react';
 import './CarsList.css';
 import CarItem from '../CarItem/CarItem';
+import { filters } from '../../filter';
+import { useLocation, useParams } from 'react-router-dom';
+import qs from 'qs';
 
 const cars = [{ "_id" : ("5eb53258b455afbe20d4599b"), "id" : 3, "first_name" : "Sissy", "last_name" : "Willbourne", "email" : "swillbourne2@xinhuanet.com", "country" : "Bolivia", "car_model" : "Lexus", "car_model_year" : 2004, "car_color" : "Puce", "gender" : "Female", "job_title" : "Staff Accountant I", "bio" : "Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui." }
 ,{ "_id" : ("5eb53258b455afbe20d459a7"), "id" : 16, "first_name" : "Quintus", "last_name" : "Winkworth", "email" : "qwinkworthf@nih.gov", "country" : "Peru", "car_model" : "Lexus", "car_model_year" : 2011, "car_color" : "Teal", "gender" : "Male", "job_title" : "Help Desk Technician", "bio" : "Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula." }
@@ -26,14 +29,23 @@ const cars = [{ "_id" : ("5eb53258b455afbe20d4599b"), "id" : 3, "first_name" : "
 
 // const props = {cars};
 
-// TODO: fetch the correct filter using the passed in id query param
-// TODO: use the filter object to form query for backend. 
-// TODO: query the backend using fetch api. assign to variable "cars"
-// TODO: cache query in indexdb for faster loading next time
 
 function Cars(props) {
+
+
+  // Fetch the correct filter using the passed in id query param
+  // - parse query parameters.
+  // - refer to filter property as ?filter because unfortunately qs parser does not strip it 
+  let filterId = qs.parse(useLocation().search)['?filter'];
+  const carFilter = filters.find((item) => item.id === +filterId )
+
+  // TODO: use the filter object to form query for backend.
+  // TODO: query the backend using fetch api. assign to variable "cars"
+  // TODO: cache query in indexdb for faster loading next time
+  
   return (
     <div className="CarsList">
+      {/* {console.log(carFilter.id)} {console.log(carFilter.car_color)} */}
       {cars.map((item, index) => (
         <CarItem key={index} item={item} />
       ))}
