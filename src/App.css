@@ -20,3 +20,7 @@ body{
   background-color: white;
   padding: 2rem;
 }
+
+img{
+  max-width: 20rem;
+}
