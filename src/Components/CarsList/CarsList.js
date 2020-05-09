@@ -24,12 +24,17 @@ const cars = [{ "_id" : ("5eb53258b455afbe20d4599b"), "id" : 3, "first_name" : "
 ,{ "_id" : ("5eb53258b455afbe20d45d72"), "id" : 987, "first_name" : "Dalton", "last_name" : "Burness", "email" : "dburnessre@dot.gov", "country" : "Ukraine", "car_model" : "Lexus", "car_model_year" : 2000, "car_color" : "Crimson", "gender" : "Male", "job_title" : "Computer Systems Analyst IV", "bio" : "Sed ante." }
 ];
 
-const props = {cars};
+// const props = {cars};
+
+// TODO: fetch the correct filter using the passed in id query param
+// TODO: use the filter object to form query for backend. 
+// TODO: query the backend using fetch api. assign to variable "cars"
+// TODO: cache query in indexdb for faster loading next time
 
 function Cars(props) {
   return (
     <div className="CarsList">
-      {props.cars.map((item, index) => (
+      {cars.map((item, index) => (
         <CarItem key={index} item={item} />
       ))}
     </div>

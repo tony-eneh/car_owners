@@ -2,6 +2,7 @@ import React from 'react';
 import './FiltersList.css';
 import FilterItem from '../FilterItem/FilterItem';
 import { filters } from '../../filter';
+import { Link } from 'react-router-dom';
 
 class FiltersList extends React.Component {
   render() {
@@ -13,7 +14,7 @@ class FiltersList extends React.Component {
       return (
         <div className="filtersList">
           {filters.map((item, index) => (
-            <FilterItem key={item.id} item={item} />
+              <FilterItem key={item.id} item={item} />
           ))}
         </div>
       );
