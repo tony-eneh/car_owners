@@ -9,6 +9,8 @@ function Cars(props) {
 
   // declare state variables
   const [cars, setCars] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   // Fetch the correct filter using the passed in id query param
   // - parse query parameters.
@@ -21,14 +23,16 @@ function Cars(props) {
   useEffect(()=>{
     fetch(`http://localhost:1337/api/car_owners?filter=${JSON.stringify(carFilter)}`)
     .then((res) => res.json())
-    .then(data => setCars(data))
-    .catch((err)=> console.log('fetch error', err));
+    .then(data => {setIsLoading(false); setCars(data)})
+    .catch((err)=> {setError(true); console.error('fetch error', err)});
   });
 
   // TODO: cache query in indexdb for faster loading next time
   
   return (
     <div className="CarsList">
+      {isLoading && !error && <p>Loading...</p>}
+      {error && <p>An Error occured while fetching the cars. Try again after a few seconds.</p>}
       {cars.map((item, index) => (
         <CarItem key={index} item={item} />
       ))}
