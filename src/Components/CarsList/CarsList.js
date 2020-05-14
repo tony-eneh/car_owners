@@ -21,10 +21,10 @@ function Cars(props) {
   // TODO: use the filter object to form query for backend.
   // Query the backend using fetch api. assign to variable "cars"
   useEffect(()=>{
-    fetch(`http://localhost:1337/api/car_owners?filter=${JSON.stringify(carFilter)}`)
-    .then((res) => res.json())
-    .then(data => {setIsLoading(false); setCars(data)})
-    .catch((err)=> {setError(true); console.error('fetch error', err)});
+    fetch(`https://ven10-carowners-api.herokuapp.com/api/car_owners?filter=${JSON.stringify(carFilter)}`)
+    .then((res) => res.text())
+    .then(data => {setIsLoading(false); setCars(data); console.log('fetched data',data)})
+    .catch((err)=> {setIsLoading(false); setError(true); console.error('fetch error', err)});
   });
 
   // TODO: cache query in indexdb for faster loading next time
