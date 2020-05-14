@@ -44,7 +44,6 @@ class FiltersList extends React.Component {
           filters.map((item, index) => 
               <FilterItem key={item.id} item={item} />
           )}
-        }
       </div>
     );
   }
