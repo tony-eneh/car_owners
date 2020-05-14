@@ -1,17 +1,18 @@
-.filter-item {}
-
 .filter-item ul{
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    padding-left: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+  margin: 5px 0px;
 }
-
-.filter-item ul li{
-    margin: 0 3px;
-    background-color: #aaa;
-    border-radius: 1rem;
-    padding: .5rem;
+  
+.countries li{
+    font-size: 13px;
+    text-transform: capitalize;
+    margin: 0 5px;
+    background-color: rgb(222,222,222);
+    border-radius: 12px;
+    padding: 5px 10px;
 }
 
 a{
