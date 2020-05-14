@@ -21,8 +21,8 @@ function Cars(props) {
   // TODO: use the filter object to form query for backend.
   // Query the backend using fetch api. assign to variable "cars"
   useEffect(()=>{
-    fetch(`https://ven10-carowners-api.herokuapp.com/api/car_owners?filter=${JSON.stringify(carFilter)}`)
-    .then((res) => res.text())
+    fetch(`${process.env.REACT_APP_CAROWNERS_API}?filter=${JSON.stringify(carFilter)}`)
+    .then((res) => res.json())
     .then(data => {setIsLoading(false); setCars(data); console.log('fetched data',data)})
     .catch((err)=> {setIsLoading(false); setError(true); console.error('fetch error', err)});
   });
@@ -33,7 +33,7 @@ function Cars(props) {
     <div className="CarsList page-content">
       {isLoading && !error && <p>Loading...</p>}
       {error && <p>An Error occured while fetching the cars. Try again after a few seconds.</p>}
-      {cars.map((item, index) => (
+      {cars.length > 0 && cars.map((item, index) => (
         <CarItem key={index} item={item} />
       ))}
     </div>
