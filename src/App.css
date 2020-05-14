@@ -1,20 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Anaheim&display=swap');
 
-:root{
-  font-size: large;
-  padding: 0;
-}
-
 body{
-  padding: 1rem;
   background: rgb(250,250,250);
   line-height: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .App {
   max-width: 600px;
   margin-top: 20px;
-  font-family: Anaheim, sans-serif;;
+  font-family: Anaheim, sans-serif;
+
 }
 
 .card{

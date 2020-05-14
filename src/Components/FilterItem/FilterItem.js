@@ -6,7 +6,7 @@ function FilterItem(props){
 
     const filter = props.item;
     return(
-        <Link to={`/cars?filter=${filter.id}`}>
+        <Link to={`/cars?filter=${filter.id}`} class="linked-card">
             <div className='filter-item card'>
                 <h3>{filter.start_year} - {filter.end_year}</h3>
                 <h4>{filter.gender}</h4>
