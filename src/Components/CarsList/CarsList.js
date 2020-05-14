@@ -30,7 +30,7 @@ function Cars(props) {
   // TODO: cache query in indexdb for faster loading next time
   
   return (
-    <div className="CarsList">
+    <div className="CarsList page-content">
       {isLoading && !error && <p>Loading...</p>}
       {error && <p>An Error occured while fetching the cars. Try again after a few seconds.</p>}
       {cars.map((item, index) => (

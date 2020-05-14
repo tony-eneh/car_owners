@@ -36,7 +36,8 @@ class FiltersList extends React.Component {
 
   render() {
     return (
-      <div className="filtersList">
+      <div className="filtersList page-content">
+        <h2 class="page-title">Filter</h2>
         {this.state.isLoading &&  <div>Loading...</div>}
         {this.state.error && <div>Error: could not load the cars. Try some seconds later</div>}
         {this.state.filters.length &&
