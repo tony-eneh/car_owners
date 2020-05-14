@@ -21,7 +21,7 @@ function Cars(props) {
   // TODO: use the filter object to form query for backend.
   // Query the backend using fetch api. assign to variable "cars"
   useEffect(()=>{
-    fetch(`${process.env.REACT_APP_CAROWNERS_API}?filter=${JSON.stringify(carFilter)}`)
+    fetch(`${process.env.REACT_APP_CAR_OWNERS_API}?filter=${JSON.stringify(carFilter)}`)
     .then((res) => res.json())
     .then(data => {setIsLoading(false); setCars(data); console.log('fetched data',data)})
     .catch((err)=> {setIsLoading(false); setError(true); console.error('fetch error', err)});
