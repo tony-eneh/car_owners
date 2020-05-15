@@ -8,7 +8,7 @@ import qs from 'qs';
 function Cars(props) {
 
   // declare state variables
-  const [cars, setCars] = useState([]);
+  const [cars, setCars] = useState(null); /* use null as initial state, to be able differentiate it from an empty response.*/
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
 
@@ -34,7 +34,11 @@ function Cars(props) {
       <h2 className="page-title">Car Owners</h2>
       {isLoading && !error && <p>Loading...</p>}
       {error && <p>An Error occured while fetching the cars. Try again after a few seconds.</p>}
-      {cars.length > 0 && cars.map((item, index) => (
+      { 
+        // support for empty server response
+        (cars && !cars.length) && <div>This filters matched zero cars. Go back and try another filter.</div>
+      }
+      {(cars && cars.length > 0) && cars.map((item, index) => (
         <CarItem key={index} item={item} />
       ))}
     </div>

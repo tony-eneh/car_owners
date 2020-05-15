@@ -40,7 +40,7 @@ class FiltersList extends React.Component {
         <h2 class="page-title">Filter</h2>
         {this.state.isLoading &&  <div>Loading...</div>}
         {this.state.error && <div>Error: could not load the cars. Try some seconds later</div>}
-        {this.state.filters.length > 0 &&
+        {(!this.state.isLoading && !this.state.error) &&
           filters.map((item, index) => 
               <FilterItem key={item.id} item={item} />
           )}
