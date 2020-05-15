@@ -29,10 +29,13 @@
 
 .card-details h3{
     color: black;
+    font: inherit;
+    font-size: 18px;
+    margin-bottom: 5px;
 }
 
 .demarcated{
-    border-right: black solid 2px;
+    border-right: black solid 1px;
 }
 
 .truncate{
@@ -68,4 +71,8 @@ span.color{
     /* center the color thumbnail under the text */
     margin-right: auto;
     margin-left: auto;
+}
+
+.email{
+    margin-bottom: 3px;
 }

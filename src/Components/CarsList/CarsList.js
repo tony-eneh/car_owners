@@ -31,6 +31,7 @@ function Cars(props) {
   
   return (
     <div className="CarsList page-content">
+      <h2 className="page-title">Car Owners</h2>
       {isLoading && !error && <p>Loading...</p>}
       {error && <p>An Error occured while fetching the cars. Try again after a few seconds.</p>}
       {cars.length > 0 && cars.map((item, index) => (
